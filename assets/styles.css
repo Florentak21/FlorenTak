@@ -1,0 +1,125 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+#mobile-menu {
+    transition: max-height 0.3s ease-in-out;
+}
+
+
+/* Profile Section Styles */
+
+.profile-image-container {
+    position: relative;
+    z-index: 1;
+}
+
+.profile-image-container img {
+    border-radius: 1rem;
+}
+
+/* Word Animation */
+.word-animation {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Typewriter Effect */
+.typewriter {
+    overflow: hidden;
+    border-right: 3px solid #4f46e5;
+    white-space: nowrap;
+    margin: 0;
+    animation: typing 3.5s steps(40, end),
+                blink-caret 0.75s step-end forwards;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #4f46e5 }
+}
+
+/* Skills Section */
+#skills {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    text-align: center;
+}
+
+#skills .section-title {
+    text-align: left;
+    padding: 1.5rem 0;
+}
+
+/* Grid Layout for Skill Cards */
+#skills .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    #skills .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    #skills .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Skill Cards */
+.skill-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1.5rem;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.skill-card i, #home i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.skill-card span {
+    font-size: 0.5rem;
+    color: #333;
+}
+
+/* Adjust text size for large screens */
+@media (min-width: 1024px) {
+    .skill-card span {
+        font-size: 1.5rem;
+    }
+}
